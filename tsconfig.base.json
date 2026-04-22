@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "sourceMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "useDefineForClassFields": true,
+    "paths": {
+      "@timbenniks/contentstack-stacksmith": ["packages/dsl/src/index.ts"],
+      "@timbenniks/contentstack-stacksmith-core": ["packages/core/src/index.ts"],
+      "@timbenniks/contentstack-stacksmith-validators": ["packages/validators/src/index.ts"],
+      "@timbenniks/contentstack-stacksmith-test-utils": ["packages/test-utils/src/index.ts"],
+      "@timbenniks/contentstack-stacksmith-cli": ["packages/cli/src/index.ts"]
+    }
+  }
+}

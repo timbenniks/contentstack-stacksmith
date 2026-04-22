@@ -1,0 +1,30 @@
+{
+  "name": "@timbenniks/contentstack-stacksmith",
+  "version": "0.1.0",
+  "description": "TypeScript DSL for defining Contentstack data models as code.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --config tsup.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "test": "vitest run",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@timbenniks/contentstack-stacksmith-core": "workspace:*"
+  }
+}

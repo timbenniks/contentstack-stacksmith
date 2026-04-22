@@ -1,0 +1,17 @@
+{
+  "command": "auth:tokens:add",
+  "module": "add",
+  "userId": "d629b1d5-80d8-58b0-bd64-5396edef9291",
+  "email": "tim@timbenniks.dev",
+  "sessionId": "f5Q37yrLKF7NerVRo9iAbV",
+  "apiKey": "bltb4108ffe225d58eb",
+  "orgId": "",
+  "authenticationMethod": "Basic Auth",
+  "startTimestamp": "2026-04-14T17:01:51.918Z",
+  "MachineEnvironment": {
+    "nodeVersion": "v24.14.1",
+    "os": "darwin",
+    "hostname": "TimBenniks-Mac",
+    "CLI_VERSION": "1.60.1"
+  }
+}

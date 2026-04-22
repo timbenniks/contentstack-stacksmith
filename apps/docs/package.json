@@ -1,0 +1,17 @@
+{
+  "name": "@timbenniks/contentstack-stacksmith-docs",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "clean": "rimraf .vitepress/dist .vitepress/cache"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.10",
+    "vitepress": "^1.5.0",
+    "vue": "^3.5.13"
+  }
+}

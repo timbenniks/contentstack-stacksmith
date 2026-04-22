@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "@timbenniks/contentstack-stacksmith-core": ["../core/dist/index.d.ts"]
+    }
+  },
+  "include": ["src"]
+}

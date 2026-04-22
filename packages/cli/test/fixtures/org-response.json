@@ -1,0 +1,1657 @@
+{
+  "organization": {
+    "_id": "fixture-org-uid",
+    "uid": "fixture-org-uid",
+    "name": "Fixture Organization",
+    "plan_id": "fixture-subscription",
+    "is_over_usage_allowed": false,
+    "expires_on": "2026-01-01T00:00:00.000Z",
+    "owner_uid": "fixture-user-uid",
+    "enabled": true,
+    "created_at": "2026-01-01T00:00:00.000Z",
+    "updated_at": "2026-01-01T00:00:00.000Z",
+    "deleted_at": false,
+    "account_id": "fixture-subscription",
+    "settings": {
+      "blockAuthQueryParams": true,
+      "allowedCDNTokens": [
+        "access_token"
+      ]
+    },
+    "created_by": "fixture-user-uid",
+    "updated_by": "fixture-user-uid",
+    "tags": [
+      "employee"
+    ],
+    "metadata": {
+      "origin": "trial_instant"
+    },
+    "__v": 0,
+    "plan": {
+      "plan_id": "internal_employee_default_cda_mktplace_timbenniks",
+      "name": "Employee Default Marketplace Plan: Tim Benniks",
+      "message": "This is the main plan for all Contentstack employees.",
+      "price": "$0",
+      "features": [
+        {
+          "uid": "users",
+          "name": "Users",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "roles",
+          "name": "UserRoles",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "sso",
+          "name": "SSO",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "ssoRoles",
+          "name": "SSO Roles",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "ssoEntityId",
+          "name": "SSO Multiple Entities",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "scimv2",
+          "name": "SCIM 2.0",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "environments",
+          "name": "Environments",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "branches",
+          "name": "Branches",
+          "enabled": true,
+          "limit": 5,
+          "max_limit": 5,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "branch_aliases",
+          "name": "Branch Aliases",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "digitalProperties",
+          "name": "DigitalProperties",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "fieldModifierLocation",
+          "name": "Extension Field Modifier Location",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "limit",
+          "name": "API Requests Limit",
+          "enabled": true,
+          "limit": 20,
+          "max_limit": 20,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "getLimit",
+          "name": "GET Requests Limit",
+          "enabled": true,
+          "limit": 43,
+          "max_limit": 43,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "apiBandwidth",
+          "name": "API Bandwidth",
+          "enabled": true,
+          "limit": 5000000000000,
+          "max_limit": 5000000000000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "apiRequests",
+          "name": "API Requests",
+          "enabled": true,
+          "limit": 6000000,
+          "max_limit": 6000000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "managementTokensLimit",
+          "name": "Management Tokens Limit",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "newCDA",
+          "name": "Use New CDA",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "syncCDA",
+          "name": "default",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "is_name_editable": true,
+          "depends_on": []
+        },
+        {
+          "uid": "fullPageLocation",
+          "name": "Extension Full Page Location",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "newCDAWorkflow",
+          "name": "newCDAWorkflow",
+          "enabled": true,
+          "limit": 0,
+          "max_limit": 3,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "workflowEntryLock",
+          "name": "Enable Workflow Stage Entry Locking",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "extension",
+          "name": "Extension",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "total_extension",
+          "name": "Total Extensions",
+          "enabled": true,
+          "limit": 50,
+          "max_limit": 50,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bin",
+          "name": "Enable Trash bin",
+          "enabled": true,
+          "limit": 14,
+          "max_limit": 14,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "deliveryTokens",
+          "name": "Delivery Tokens",
+          "enabled": true,
+          "limit": 20,
+          "max_limit": 20,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "cow_search",
+          "name": "Cow Search",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "searchV2",
+          "name": "searchV2",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "newRefAndPartialSearch",
+          "name": "Reference and PartialSearch",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "app_switcher",
+          "name": "App Switcher",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "release_v2",
+          "name": "Release v2",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "useCUDToViewManagementAPI",
+          "name": "View Management API for CUD Operations",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "useViewManagementAPI",
+          "name": "View Management API",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "breadcrumb",
+          "name": "breadcrumb",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "app_switcher"
+          ]
+        },
+        {
+          "uid": "globalDashboardAccess",
+          "name": "globalDashboardAccess",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "app_switcher"
+          ]
+        },
+        {
+          "uid": "readPublishLogsFromElastic",
+          "name": "Read Publish Logs from Elastic",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "includeCMAReleaseLogsByDefault",
+          "name": "Include CMA Release Logs by Default",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "rbacAccess",
+          "name": "RBAC Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "rbacRolesManageAccess",
+          "name": "RBAC Roles Manage Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "dashboard",
+          "name": "Dashboards",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "globalSearch",
+          "name": "Global Search",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "workflow",
+          "name": "Workflow",
+          "enabled": true,
+          "limit": 30,
+          "max_limit": 30,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "dashboard_widget",
+          "name": "Dashboard Widgets",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "extension_widget",
+          "name": "extension_widget",
+          "enabled": true,
+          "limit": 500,
+          "max_limit": 500,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "incubationProjAccess",
+          "name": "Incubation Project Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "analytics",
+          "name": "Analytics",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "analyticsDashboard",
+          "name": "Analytics Dashboard",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "newDashboardEnabled",
+          "name": "newDashboardEnabled",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "marketplaceAccess",
+          "name": "Marketplace Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "livePreview",
+          "name": "Live Preview",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "nestedReferencePublishAccess",
+          "name": "Nested Reference Publish Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_name_editable": false,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "nestedReferencePublishDepth",
+          "name": "Nested Reference Publish Depth",
+          "enabled": true,
+          "limit": 5,
+          "max_limit": 5,
+          "depends_on": [
+            "nestedReferencePublishAccess"
+          ],
+          "is_name_editable": false,
+          "is_required": false
+        },
+        {
+          "uid": "livePreviewGraphql",
+          "name": "Live Preview Support for GraphQL",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "previewTokens",
+          "name": "Preview tokens",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "livePreview"
+          ]
+        },
+        {
+          "uid": "in_app_notification_access",
+          "name": "Global Notifications",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "timelineAPI",
+          "name": "timelineAPI",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "livePreview"
+          ]
+        },
+        {
+          "uid": "productAnalyticsV2",
+          "name": "Enhanced Product Analytics App productAnalyticsV2",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "visualBuilderAccess",
+          "name": "Visual Build Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "livePreview"
+          ]
+        },
+        {
+          "uid": "global_notification_cma",
+          "name": "Global Notifications enablement for CMA",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "previewShareAccess",
+          "name": "Preview Share Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "lyticsIntegration",
+          "name": "lyticsIntegration",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "traffic_explorer",
+          "name": "traffic explorer",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "discovery_dashboard",
+          "name": "Platform features - Discovery Dashboard",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "nestedSinglePublishing",
+          "name": "nestedSinglePublishing",
+          "group_key": "platform",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "composableStudioAccess",
+          "name": "composableStudioAccess",
+          "group_key": "platform",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "stacks",
+          "name": "Stacks",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "stackCreationLimit",
+          "name": "Stack limits",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "releases",
+          "name": "Releases",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "assets",
+          "name": "Assets",
+          "enabled": true,
+          "limit": 30000,
+          "max_limit": 30000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "content_types",
+          "name": "Content Types",
+          "enabled": true,
+          "limit": 1000,
+          "max_limit": 1000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "entries",
+          "name": "Entries",
+          "enabled": true,
+          "limit": 30000,
+          "max_limit": 30000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "global_fields",
+          "name": "Global Fields",
+          "enabled": true,
+          "limit": 1000,
+          "max_limit": 1000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "metadata",
+          "name": "metadata",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "entry_presence",
+          "name": "Entry Presence",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "entryDiscussion",
+          "name": "Entry Discussion",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "inProgressEntries",
+          "name": "In-Progress Entries",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "preserveMetadata",
+          "name": "Preserve Metadata in multiple group,global field and blocks",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "assetExtension",
+          "name": "assetExtension",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bypassRegexChecks",
+          "name": "Bypass Field Validation Regex Checks",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "socialEmbed",
+          "name": "socialEmbed",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxFieldsLimit",
+          "name": "Max Field Limits",
+          "enabled": true,
+          "limit": 250,
+          "max_limit": 250,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxMetadataSizeInBytes",
+          "name": "maxMetadataSizeInBytes",
+          "enabled": true,
+          "limit": 5000,
+          "max_limit": 15000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxReleaseItems",
+          "name": "Max Items in a Release",
+          "enabled": true,
+          "limit": 500,
+          "max_limit": 500,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxIncludeReferenceDepth",
+          "name": "Max Include Reference Depth",
+          "enabled": true,
+          "limit": 4,
+          "max_limit": 4,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxContentTypesPerReferenceField",
+          "name": "Max Content Types Per Reference Field",
+          "enabled": true,
+          "limit": 25,
+          "max_limit": 25,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxDynamicBlocksPerContentType",
+          "name": "Modular Blocks Fields",
+          "enabled": true,
+          "limit": 20,
+          "max_limit": 20,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxEntriesPerReferenceField",
+          "name": "Max Reference in an Entry",
+          "enabled": true,
+          "limit": 150,
+          "max_limit": 150,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxDynamicBlockDefinations",
+          "name": "Modular Blocks",
+          "enabled": true,
+          "limit": 50,
+          "max_limit": 50,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxDynamicBlockObjects",
+          "name": "Modular Blocks",
+          "enabled": true,
+          "limit": 120,
+          "max_limit": 120,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxDynamicBlocksNestingDepth",
+          "name": "Modular Blocks Depth",
+          "enabled": true,
+          "limit": 6,
+          "max_limit": 6,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "cms_variants",
+          "name": "CMS Variants",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "nested_global_fields",
+          "name": "Nested Global Fields",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "entry_tabs",
+          "name": "entry tabs",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "branchesV2",
+          "name": "Branches V2",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "locales",
+          "name": "Locales",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "languageFallback",
+          "name": "Language Fallback",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "fieldLevelLocalization",
+          "name": "Field Level Localization",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "fieldLevelLocalizationGlobalFields",
+          "name": "Global Fields Field Level Localization",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "singlePublishEntryLocalesLimit",
+          "name": "Single Publish Entry Locales Limit",
+          "enabled": true,
+          "limit": 50,
+          "max_limit": 50,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "publishLocalizedVersions",
+          "name": "publishLocalizedVersions",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "includeFallbackPublishContent",
+          "name": "includeFallbackPublishContent",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "fieldLevelLocalizationBlockAndGroupMultiple",
+          "name": "Field Level Localization for Blocks and Groups",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "automationAccess",
+          "name": "Automation Hub Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "automation_exec_soft_limit",
+          "name": "Execution Soft Limit",
+          "enabled": true,
+          "limit": 5000,
+          "max_limit": 5000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "automation_exec_hard_limit",
+          "name": "Execution Hard Limit",
+          "enabled": true,
+          "limit": 5000,
+          "max_limit": 5000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "customAgentManagementApiRateLimit",
+          "name": "Custom Agent Management Rate Limit",
+          "enabled": true,
+          "limit": 300,
+          "max_limit": 300,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "customAgentExecutionRateLimit",
+          "name": "Custom Agent Run Rate Limit",
+          "enabled": true,
+          "limit": 120,
+          "max_limit": 120,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "customAgentExecutionQuotaLimit",
+          "name": "Custom Agent Execution Quota Limit",
+          "enabled": true,
+          "limit": 10000,
+          "max_limit": 10000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "customAgentMaxCountPerProject",
+          "name": "Custom Agent Max Count Per Project",
+          "enabled": true,
+          "limit": 50,
+          "max_limit": 50,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "customAgentAccess",
+          "name": "Custom Agent Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "agentos_execution_log",
+          "name": "agentos_execution_log",
+          "group_key": "automationhub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "polaris",
+          "name": "polaris",
+          "group_key": "automationhub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "graphql",
+          "name": "GraphQL",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "newGraphQL",
+          "name": "New GraphQL Version",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "gql_graphql_beta",
+          "name": "GraphQL Beta",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "graphqlLimit",
+          "name": "GraphQL Limit",
+          "enabled": true,
+          "limit": 80,
+          "max_limit": 80,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "publishWithMetadata",
+          "name": "publishWithMetadata",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentflyAccess",
+          "name": "Enable Launch Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_projects_per_org",
+          "name": "Number of Launch Projects",
+          "enabled": true,
+          "limit": 30,
+          "max_limit": 30,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_environments_per_org",
+          "name": "Number of Launch Environments",
+          "enabled": true,
+          "limit": 60,
+          "max_limit": 60,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_environments_per_project",
+          "name": "Number of Launch Environments per Project",
+          "enabled": true,
+          "limit": 5,
+          "max_limit": 5,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_deployment_build_hours_per_month",
+          "name": "Number of Launch Build Hours per Month",
+          "enabled": true,
+          "limit": 50,
+          "max_limit": 50,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_build_minutes_per_deployment",
+          "name": "Maximum Launch Build Minutes per Build",
+          "enabled": true,
+          "limit": 60,
+          "max_limit": 60,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_domains_per_environment",
+          "name": "Maximum Launch Domains per Environment",
+          "enabled": true,
+          "limit": 5,
+          "max_limit": 5,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_domains_per_project",
+          "name": "Maximum Launch Domains per Project",
+          "enabled": true,
+          "limit": 5,
+          "max_limit": 5,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_deployhooks_per_environment",
+          "name": "Maximum deployment hooks per Environment",
+          "enabled": true,
+          "limit": 5,
+          "max_limit": 5,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_server_compute_time_hours",
+          "name": "Maximum server compute time per Project",
+          "enabled": true,
+          "limit": 50,
+          "max_limit": 50,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_custom_apex_domain",
+          "name": "Contentfly Custom Apex Domain",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_cache_priming",
+          "name": "contentfly_cache_priming",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "contentfly_cache_priming",
+          "name": "contentfly_cache_priming",
+          "group_key": "launch",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "rtePlugin",
+          "name": "rtePlugin",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "embeddedObjects",
+          "name": "Embedded Objects",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxEmbeddedObjectsPerJsonRteField",
+          "name": "maxEmbeddedObjectsPerJsonRteField",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxContentTypesPerJsonRte",
+          "name": "maxContentTypesPerJsonRte",
+          "enabled": true,
+          "limit": 15,
+          "max_limit": 15,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxJsonRTEReferredInCT",
+          "name": "maxJsonRTEReferredInCT",
+          "enabled": true,
+          "limit": 15,
+          "max_limit": 15,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxMultipleJsonRte",
+          "name": "maxMultipleJsonRte",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxRteJsonSizeInBytes",
+          "name": "maxRteJsonSizeInBytes",
+          "enabled": true,
+          "limit": 1000000,
+          "max_limit": 1000000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxJSONCustomFieldsPerCT",
+          "name": "maxJSONCustomFieldsPerCT",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxEmbeddedObjectsPerRichTextField",
+          "name": "Max Embedded Objects per Rich Text Editor Field",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "maxContentTypesPerRichTextField",
+          "name": "Max Content Types referred per Rich Text Editor Field",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "rteComment",
+          "name": "RTE Inline Comment",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "entryDiscussion"
+          ]
+        },
+        {
+          "uid": "emptyPIIValuesInIncludeOwnerForDelivery",
+          "name": "emptyPIIValuesInIncludeOwnerForDelivery",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "developerhubAccess",
+          "name": "Developer Hub Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "developerhub_app_permissions",
+          "name": "developerhub_app_permissions",
+          "group_key": "developerHub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "developerhub_advanced_settings",
+          "name": "developerhub_advanced_settings",
+          "group_key": "developerHub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "developerhub_app_permissions",
+          "name": "developerhub_app_permissions",
+          "group_key": "developerHub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "developerhub_advanced_settings",
+          "name": "developerhub_advanced_settings",
+          "group_key": "developerHub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "developerhub_m2m_app",
+          "name": "developerhub_m2m_app",
+          "group_key": "developerHub",
+          "is_custom": true,
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "taxonomy",
+          "name": "taxonomy",
+          "enabled": true,
+          "limit": 20,
+          "max_limit": 20,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "taxonomy_terms",
+          "name": "taxonomy_terms",
+          "enabled": true,
+          "limit": 10000,
+          "max_limit": 10000,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "taxonomy_terms_max_depth",
+          "name": "taxonomy_terms_max_depth",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "max_taxonomies_per_content_type",
+          "name": "max_taxonomies_per_content_type",
+          "enabled": true,
+          "limit": 20,
+          "max_limit": 20,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "max_terms_per_entry",
+          "name": "max_terms_per_entry",
+          "enabled": true,
+          "limit": 25,
+          "max_limit": 25,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "taxonomy_permissions",
+          "name": "Taxonomy Permissions",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "taxonomy_localization",
+          "name": "Taxonomy Localization",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "orgAdminAccess",
+          "name": "OrgAdmin Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulk_user_actions",
+          "name": "Bulk User Actions",
+          "enabled": true,
+          "limit": 10,
+          "max_limit": 10,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "webhookConfig",
+          "name": "Webhook configuration",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "allowedEmailDomains",
+          "name": "Allowed Email Domains",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "mfaResetAccess",
+          "name": "Allow admins to reset MFA for users",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bkAccess",
+          "name": "Brand Kit Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bkKitsPerOrg",
+          "name": "Brand Kits Per Organization",
+          "enabled": true,
+          "limit": 20,
+          "max_limit": 20,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bkProfilesPerKit",
+          "name": "Brand Kits Per Profile",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 500,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "personalizationAccess",
+          "name": "Personalization Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulk-action",
+          "name": "Bulk Action",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulkLimit",
+          "name": "bulkLimit",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulk-action-delete-v2",
+          "name": "Bulk action Delete v2",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulk-action-publish",
+          "name": "Bulk action Publish",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulk-action-unpublish",
+          "name": "Bulk action Unpublish",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "bulk-action-add-to-release",
+          "name": "Bulk action Add To Release",
+          "enabled": true,
+          "limit": 100,
+          "max_limit": 100,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "nestedSinglePublishing",
+          "name": "nestedSinglePublishing",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": []
+        },
+        {
+          "uid": "composableStudioAccess",
+          "name": "composableStudioAccess",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1,
+          "is_required": false,
+          "depends_on": [
+            "livePreview"
+          ]
+        },
+        {
+          "uid": "orchestrator-agent-access",
+          "name": "Orchestrator Agent Access",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "contentfly_projects",
+          "name": "Number of Launch Projects",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "contentfly_environments",
+          "name": "Number of Launch Environments",
+          "enabled": true,
+          "limit": 3,
+          "max_limit": 3
+        },
+        {
+          "uid": "extensionsMicroservice",
+          "name": "Extensions Microservice",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "nestedReferencePublishLog",
+          "name": "Nested Reference Publish Log",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "extensionsMicroservice",
+          "name": "Extensions Microservice",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "Webhook OAuth Access",
+          "name": "webhookOauth",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        },
+        {
+          "uid": "Audit log for Contentstack Products",
+          "name": "audit_log",
+          "enabled": true,
+          "limit": 1,
+          "max_limit": 1
+        }
+      ],
+      "created_at": "2024-10-08T15:00:42.374Z",
+      "updated_at": "2026-04-15T10:51:43.718Z",
+      "blockedAssetTypes": []
+    },
+    "owner": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "developers-cs-website",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint . --ext .ts",
+    "test": "vitest run --passWithNoTests",
+    "clean": "rimraf .contentstack",
+    "build-models": "csdx stacksmith:build --cwd .",
+    "plan-models": "csdx stacksmith:plan --cwd .",
+    "diff-models": "csdx stacksmith:diff --cwd .",
+    "docs-models": "csdx stacksmith:docs --cwd ."
+  },
+  "dependencies": {
+    "@timbenniks/contentstack-stacksmith": "workspace:*"
+  }
+}

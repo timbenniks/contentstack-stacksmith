@@ -1,0 +1,31 @@
+{
+  "name": "@timbenniks/contentstack-stacksmith-test-utils",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Shared fixtures and helpers for Contentstack models monorepo tests.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --tsconfig tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run --passWithNoTests",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@timbenniks/contentstack-stacksmith": "workspace:*"
+  }
+}

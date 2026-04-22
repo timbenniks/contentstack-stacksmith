@@ -1,0 +1,46 @@
+{
+  "name": "@timbenniks/contentstack-stacksmith-cli",
+  "version": "0.1.0",
+  "description": "Contentstack CLI plugin for managing content models as code.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "oclif.manifest.json"
+  ],
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "csdx",
+    "plugins": []
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && pnpm exec oclif manifest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "test": "mocha --forbid-only --require ts-node/register/transpile-only \"test/**/*.test.ts\"",
+    "clean": "rimraf lib oclif.manifest.json"
+  },
+  "dependencies": {
+    "@contentstack/cli-command": "^1.6.1",
+    "@contentstack/cli-utilities": "^1.14.4",
+    "@contentstack/management": "^1.25.1",
+    "@contentstack/types-generator": "^3.9.4",
+    "@oclif/core": "^4.8.0",
+    "@timbenniks/contentstack-stacksmith": "workspace:*",
+    "jiti": "^2.4.2"
+  },
+  "devDependencies": {
+    "@oclif/test": "^4.1.18",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "chai": "^5.2.0",
+    "mocha": "^11.1.0",
+    "oclif": "^4.23.0",
+    "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

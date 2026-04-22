@@ -1,0 +1,17 @@
+{
+  "command": "auth:whoami",
+  "module": "whoami",
+  "userId": "d629b1d5-80d8-58b0-bd64-5396edef9291",
+  "email": "tim@timbenniks.dev",
+  "sessionId": "bpAXCrmYpmy5uXVZKjUtYd",
+  "apiKey": "bltb4108ffe225d58eb",
+  "orgId": "",
+  "authenticationMethod": "Basic Auth",
+  "startTimestamp": "2026-04-14T17:01:56.297Z",
+  "MachineEnvironment": {
+    "nodeVersion": "v24.14.1",
+    "os": "darwin",
+    "hostname": "TimBenniks-Mac",
+    "CLI_VERSION": "1.60.1"
+  }
+}

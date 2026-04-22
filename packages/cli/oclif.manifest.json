@@ -1,0 +1,1985 @@
+{
+  "commands": {
+    "models:apply": {
+      "aliases": [],
+      "args": {},
+      "description": "Safely apply low-risk additive model changes to a Contentstack stack.",
+      "examples": [
+        "$ csdx models:apply --stack blt123 --token-alias my-stack",
+        "$ csdx models:apply --stack blt123 --token-alias my-stack --yes --ci"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key used for remote compare and apply.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Contentstack branch name.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "region": {
+          "char": "r",
+          "description": "Contentstack region alias.",
+          "name": "region",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "yes": {
+          "char": "y",
+          "description": "Skip confirmation after validations pass.",
+          "name": "yes",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "dry-run": {
+          "description": "Print the plan and exit without contacting the stack.",
+          "name": "dry-run",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "reset-state": {
+          "description": "Discard any existing apply-state.json before running.",
+          "name": "reset-state",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:apply",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "apply.js"
+      ]
+    },
+    "models:audit-org": {
+      "aliases": [],
+      "args": {},
+      "description": "Audit your organization's plan capabilities and cross-reference them against your local DSL.",
+      "examples": [
+        "$ csdx models:audit-org",
+        "$ csdx models:audit-org --org blt-org-uid",
+        "$ csdx models:audit-org --cwd apps/simple-blog",
+        "$ csdx models:audit-org --stack blt123abc --cwd apps/example-project --json",
+        "$ csdx models:audit-org --include-usage --output audit-report.md",
+        "$ csdx models:audit-org --include-usage --stack blt123abc --output report.json"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "org": {
+          "description": "Organization UID. Falls back to your csdx auth:login --oauth session or --stack derivation.",
+          "name": "org",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key. Used to derive the org UID when --org is omitted, and to focus stack-usage findings when --include-usage is on.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "include-usage": {
+          "description": "Also fetch CMS usage analytics (stack counts, entries, assets, etc.) and cross-reference them against plan limits. Requires org analytics to be enabled.",
+          "name": "include-usage",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "output": {
+          "description": "Write the full audit report to this file path. Format is inferred from the extension: .json or .md (default: .md). Useful for attaching to Contentstack support tickets.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output-format": {
+          "description": "Explicit output format for --output. Overrides the extension inference.",
+          "name": "output-format",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "json",
+            "md"
+          ],
+          "type": "option"
+        },
+        "management-token": {
+          "hidden": true,
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "hidden": true,
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:audit-org",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "audit-org.js"
+      ]
+    },
+    "models:build": {
+      "aliases": [],
+      "args": {},
+      "description": "Compile TypeScript model definitions into normalized schema artifacts.",
+      "examples": [
+        "$ csdx models:build",
+        "$ csdx models:build --config ./contentstack.models.config.ts --json"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:build",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "build.js"
+      ]
+    },
+    "models:diff": {
+      "aliases": [],
+      "args": {},
+      "description": "Show a human-readable or JSON diff between local models and a target stack.",
+      "examples": [
+        "$ csdx models:diff",
+        "$ csdx models:diff --stack blt123 --token-alias my-stack --json"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key used for remote compare and apply.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Contentstack branch name.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "region": {
+          "char": "r",
+          "description": "Contentstack region alias.",
+          "name": "region",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "description": "Write the diff JSON to a specific file.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:diff",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "diff.js"
+      ]
+    },
+    "models:docs": {
+      "aliases": [],
+      "args": {},
+      "description": "Generate documentation from compiled model definitions in Markdown, JSON, or HTML.",
+      "examples": [
+        "$ csdx models:docs",
+        "$ csdx models:docs --output ./docs/models.md",
+        "$ csdx models:docs --format json --output ./docs/models.json",
+        "$ csdx models:docs --format html --output ./docs/models.html"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "format": {
+          "description": "Documentation output format.",
+          "name": "format",
+          "default": "md",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "md",
+            "json",
+            "html"
+          ],
+          "type": "option"
+        },
+        "output": {
+          "description": "Output file path for the generated documentation.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:docs",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "docs.js"
+      ]
+    },
+    "models:import": {
+      "aliases": [],
+      "args": {},
+      "description": "Import content types and global fields from a Contentstack stack into DSL source files.",
+      "examples": [
+        "$ csdx models:import --stack blt123 --token-alias my-stack --cwd ./apps/developers-cs-website",
+        "$ csdx models:import --stack blt123 --token-alias my-stack --cwd ./apps/developers-cs-website --force"
+      ],
+      "flags": {
+        "cwd": {
+          "description": "Target project directory.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Source stack API key.",
+          "name": "stack",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias for the source stack.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token for the source stack. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Source branch on the Contentstack stack.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "force": {
+          "description": "Replace the existing import-managed model files.",
+          "name": "force",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:import",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "import.js"
+      ]
+    },
+    "models:init": {
+      "aliases": [],
+      "args": {},
+      "description": "Scaffold a starter models-as-code project structure.",
+      "examples": [
+        "$ csdx models:init",
+        "$ csdx models:init --dir ./my-models-project --yes --ci"
+      ],
+      "flags": {
+        "dir": {
+          "description": "Target directory to scaffold.",
+          "name": "dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "force": {
+          "description": "Overwrite existing files.",
+          "name": "force",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "yes": {
+          "char": "y",
+          "description": "Accept the default target directory.",
+          "name": "yes",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Return machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:init",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "init.js"
+      ]
+    },
+    "models:plan": {
+      "aliases": [],
+      "args": {},
+      "description": "Create a dependency-aware plan by comparing local models to a target stack.",
+      "examples": [
+        "$ csdx models:plan",
+        "$ csdx models:plan --stack blt123 --token-alias my-stack --branch main"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key used for remote compare and apply.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Contentstack branch name.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "region": {
+          "char": "r",
+          "description": "Contentstack region alias.",
+          "name": "region",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "description": "Write the plan JSON to a specific file.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:plan",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "plan.js"
+      ]
+    },
+    "models:promote": {
+      "aliases": [],
+      "args": {},
+      "description": "Promote models from local or a source stack to a target stack.",
+      "examples": [
+        "$ csdx models:promote --stack blt_target --token-alias target-token",
+        "$ csdx models:promote --source-stack blt_dev --source-token-alias dev-token --stack blt_staging --token-alias staging-token"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-stack": {
+          "description": "Source stack API key. If omitted, local compiled models are used as source.",
+          "name": "source-stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-token-alias": {
+          "description": "Management token alias for the source stack.",
+          "name": "source-token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-management-token": {
+          "description": "Management token for the source stack. Overrides --source-token-alias.",
+          "name": "source-management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-branch": {
+          "description": "Branch on the source stack.",
+          "name": "source-branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Target stack API key.",
+          "name": "stack",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "description": "Management token alias for the target stack.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token for the target stack. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Branch on the target stack.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "yes": {
+          "char": "y",
+          "description": "Skip confirmation prompt.",
+          "name": "yes",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "dry-run": {
+          "description": "Print the plan and exit without mutating the target stack.",
+          "name": "dry-run",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "reset-state": {
+          "description": "Discard any existing apply-state.json before running.",
+          "name": "reset-state",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:promote",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "promote.js"
+      ]
+    },
+    "models:typegen": {
+      "aliases": [],
+      "args": {},
+      "description": "Generate TypeScript type definitions from local DSL (default) or from a live stack with --from-stack.",
+      "examples": [
+        "$ csdx models:typegen --output ./types/contentstack.d.ts",
+        "$ csdx models:typegen --cwd apps/example-project --output ./types.d.ts --prefix I",
+        "$ csdx models:typegen --from-stack --token-alias my-delivery-token --output ./types.d.ts"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "from-stack": {
+          "description": "Fetch content types from a live stack via the Delivery API instead of generating from local DSL.",
+          "name": "from-stack",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "token-alias": {
+          "char": "a",
+          "description": "Delivery token alias. Required when --from-stack is set.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "char": "o",
+          "description": "Full path to the output TypeScript file.",
+          "name": "output",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "prefix": {
+          "char": "p",
+          "description": "Interface prefix (e.g. 'I' for IBlogPost).",
+          "name": "prefix",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "doc": {
+          "char": "d",
+          "description": "Include JSDoc documentation comments.",
+          "name": "doc",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "branch": {
+          "description": "Branch to generate types from (live-stack mode only).",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "include-system-fields": {
+          "description": "Include system fields (uid, created_at, etc.) in generated types.",
+          "name": "include-system-fields",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "include-editable-tags": {
+          "description": "Include editable tags for visual builder.",
+          "name": "include-editable-tags",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "include-referenced-entry": {
+          "description": "Add a generic ReferencedEntry interface.",
+          "name": "include-referenced-entry",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "api-type": {
+          "description": "API type to generate types for. GraphQL requires --from-stack.",
+          "name": "api-type",
+          "default": "rest",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "rest",
+            "graphql"
+          ],
+          "type": "option"
+        },
+        "namespace": {
+          "description": "Namespace for GraphQL types.",
+          "name": "namespace",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "models:typegen",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "models",
+        "typegen.js"
+      ]
+    },
+    "stacksmith:apply": {
+      "aliases": [],
+      "args": {},
+      "description": "Safely apply low-risk additive model changes to a Contentstack stack.",
+      "examples": [
+        "$ csdx stacksmith:apply --stack blt123 --token-alias my-stack",
+        "$ csdx stacksmith:apply --stack blt123 --token-alias my-stack --yes --ci"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key used for remote compare and apply.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Contentstack branch name.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "region": {
+          "char": "r",
+          "description": "Contentstack region alias.",
+          "name": "region",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "yes": {
+          "char": "y",
+          "description": "Skip confirmation after validations pass.",
+          "name": "yes",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "dry-run": {
+          "description": "Print the plan and exit without contacting the stack.",
+          "name": "dry-run",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "reset-state": {
+          "description": "Discard any existing apply-state.json before running.",
+          "name": "reset-state",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:apply",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "apply.js"
+      ]
+    },
+    "stacksmith:audit-org": {
+      "aliases": [],
+      "args": {},
+      "description": "Audit your organization's plan capabilities and cross-reference them against your local DSL.",
+      "examples": [
+        "$ csdx stacksmith:audit-org",
+        "$ csdx stacksmith:audit-org --org blt-org-uid",
+        "$ csdx stacksmith:audit-org --cwd apps/simple-blog",
+        "$ csdx stacksmith:audit-org --stack blt123abc --cwd apps/example-project --json",
+        "$ csdx stacksmith:audit-org --include-usage --output audit-report.md",
+        "$ csdx stacksmith:audit-org --include-usage --stack blt123abc --output report.json"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "org": {
+          "description": "Organization UID. Falls back to your csdx auth:login --oauth session or --stack derivation.",
+          "name": "org",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key. Used to derive the org UID when --org is omitted, and to focus stack-usage findings when --include-usage is on.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "include-usage": {
+          "description": "Also fetch CMS usage analytics (stack counts, entries, assets, etc.) and cross-reference them against plan limits. Requires org analytics to be enabled.",
+          "name": "include-usage",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "output": {
+          "description": "Write the full audit report to this file path. Format is inferred from the extension: .json or .md (default: .md). Useful for attaching to Contentstack support tickets.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output-format": {
+          "description": "Explicit output format for --output. Overrides the extension inference.",
+          "name": "output-format",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "json",
+            "md"
+          ],
+          "type": "option"
+        },
+        "management-token": {
+          "hidden": true,
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "hidden": true,
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:audit-org",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "audit-org.js"
+      ]
+    },
+    "stacksmith:build": {
+      "aliases": [],
+      "args": {},
+      "description": "Compile TypeScript model definitions into normalized schema artifacts.",
+      "examples": [
+        "$ csdx stacksmith:build",
+        "$ csdx stacksmith:build --config ./contentstack.stacksmith.config.ts --json"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:build",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "build.js"
+      ]
+    },
+    "stacksmith:diff": {
+      "aliases": [],
+      "args": {},
+      "description": "Show a human-readable or JSON diff between local models and a target stack.",
+      "examples": [
+        "$ csdx stacksmith:diff",
+        "$ csdx stacksmith:diff --stack blt123 --token-alias my-stack --json"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key used for remote compare and apply.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Contentstack branch name.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "region": {
+          "char": "r",
+          "description": "Contentstack region alias.",
+          "name": "region",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "description": "Write the diff JSON to a specific file.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:diff",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "diff.js"
+      ]
+    },
+    "stacksmith:docs": {
+      "aliases": [],
+      "args": {},
+      "description": "Generate documentation from compiled model definitions in Markdown, JSON, or HTML.",
+      "examples": [
+        "$ csdx stacksmith:docs",
+        "$ csdx stacksmith:docs --output ./docs/models.md",
+        "$ csdx stacksmith:docs --format json --output ./docs/models.json",
+        "$ csdx stacksmith:docs --format html --output ./docs/models.html"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "format": {
+          "description": "Documentation output format.",
+          "name": "format",
+          "default": "md",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "md",
+            "json",
+            "html"
+          ],
+          "type": "option"
+        },
+        "output": {
+          "description": "Output file path for the generated documentation.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:docs",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "docs.js"
+      ]
+    },
+    "stacksmith:import": {
+      "aliases": [],
+      "args": {},
+      "description": "Import content types and global fields from a Contentstack stack into DSL source files.",
+      "examples": [
+        "$ csdx stacksmith:import --stack blt123 --token-alias my-stack --cwd ./apps/developers-cs-website",
+        "$ csdx stacksmith:import --stack blt123 --token-alias my-stack --cwd ./apps/developers-cs-website --force"
+      ],
+      "flags": {
+        "cwd": {
+          "description": "Target project directory.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Source stack API key.",
+          "name": "stack",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias for the source stack.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token for the source stack. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Source branch on the Contentstack stack.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "force": {
+          "description": "Replace the existing import-managed model files.",
+          "name": "force",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:import",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "import.js"
+      ]
+    },
+    "stacksmith:init": {
+      "aliases": [],
+      "args": {},
+      "description": "Scaffold a starter models-as-code project structure.",
+      "examples": [
+        "$ csdx stacksmith:init",
+        "$ csdx stacksmith:init --dir ./my-models-project --yes --ci"
+      ],
+      "flags": {
+        "dir": {
+          "description": "Target directory to scaffold.",
+          "name": "dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "force": {
+          "description": "Overwrite existing files.",
+          "name": "force",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "yes": {
+          "char": "y",
+          "description": "Accept the default target directory.",
+          "name": "yes",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Return machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:init",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "init.js"
+      ]
+    },
+    "stacksmith:plan": {
+      "aliases": [],
+      "args": {},
+      "description": "Create a dependency-aware plan by comparing local models to a target stack.",
+      "examples": [
+        "$ csdx stacksmith:plan",
+        "$ csdx stacksmith:plan --stack blt123 --token-alias my-stack --branch main"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Stack API key used for remote compare and apply.",
+          "name": "stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "char": "t",
+          "description": "Contentstack management token alias.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Contentstack branch name.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "region": {
+          "char": "r",
+          "description": "Contentstack region alias.",
+          "name": "region",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "description": "Write the plan JSON to a specific file.",
+          "name": "output",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:plan",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "plan.js"
+      ]
+    },
+    "stacksmith:promote": {
+      "aliases": [],
+      "args": {},
+      "description": "Promote models from local or a source stack to a target stack.",
+      "examples": [
+        "$ csdx stacksmith:promote --stack blt_target --token-alias target-token",
+        "$ csdx stacksmith:promote --source-stack blt_dev --source-token-alias dev-token --stack blt_staging --token-alias staging-token"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-stack": {
+          "description": "Source stack API key. If omitted, local compiled models are used as source.",
+          "name": "source-stack",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-token-alias": {
+          "description": "Management token alias for the source stack.",
+          "name": "source-token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-management-token": {
+          "description": "Management token for the source stack. Overrides --source-token-alias.",
+          "name": "source-management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "source-branch": {
+          "description": "Branch on the source stack.",
+          "name": "source-branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "stack": {
+          "char": "s",
+          "description": "Target stack API key.",
+          "name": "stack",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "token-alias": {
+          "description": "Management token alias for the target stack.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "management-token": {
+          "description": "Management token for the target stack. Overrides --token-alias and any parent CLI session.",
+          "name": "management-token",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "branch": {
+          "description": "Branch on the target stack.",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "yes": {
+          "char": "y",
+          "description": "Skip confirmation prompt.",
+          "name": "yes",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "dry-run": {
+          "description": "Print the plan and exit without mutating the target stack.",
+          "name": "dry-run",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "reset-state": {
+          "description": "Discard any existing apply-state.json before running.",
+          "name": "reset-state",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:promote",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "promote.js"
+      ]
+    },
+    "stacksmith:typegen": {
+      "aliases": [],
+      "args": {},
+      "description": "Generate TypeScript type definitions from local DSL (default) or from a live stack with --from-stack.",
+      "examples": [
+        "$ csdx stacksmith:typegen --output ./types/contentstack.d.ts",
+        "$ csdx stacksmith:typegen --cwd apps/example-project --output ./types.d.ts --prefix I",
+        "$ csdx stacksmith:typegen --from-stack --token-alias my-delivery-token --output ./types.d.ts"
+      ],
+      "flags": {
+        "config": {
+          "description": "Path to contentstack.stacksmith.config.ts",
+          "name": "config",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "cwd": {
+          "description": "Working directory for resolving project files.",
+          "name": "cwd",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "out-dir": {
+          "description": "Override the config output directory for generated artifacts.",
+          "name": "out-dir",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "from-stack": {
+          "description": "Fetch content types from a live stack via the Delivery API instead of generating from local DSL.",
+          "name": "from-stack",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "token-alias": {
+          "char": "a",
+          "description": "Delivery token alias. Required when --from-stack is set.",
+          "name": "token-alias",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "output": {
+          "char": "o",
+          "description": "Full path to the output TypeScript file.",
+          "name": "output",
+          "required": true,
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "prefix": {
+          "char": "p",
+          "description": "Interface prefix (e.g. 'I' for IBlogPost).",
+          "name": "prefix",
+          "default": "",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "doc": {
+          "char": "d",
+          "description": "Include JSDoc documentation comments.",
+          "name": "doc",
+          "allowNo": true,
+          "type": "boolean"
+        },
+        "branch": {
+          "description": "Branch to generate types from (live-stack mode only).",
+          "name": "branch",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "include-system-fields": {
+          "description": "Include system fields (uid, created_at, etc.) in generated types.",
+          "name": "include-system-fields",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "include-editable-tags": {
+          "description": "Include editable tags for visual builder.",
+          "name": "include-editable-tags",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "include-referenced-entry": {
+          "description": "Add a generic ReferencedEntry interface.",
+          "name": "include-referenced-entry",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "api-type": {
+          "description": "API type to generate types for. GraphQL requires --from-stack.",
+          "name": "api-type",
+          "default": "rest",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "options": [
+            "rest",
+            "graphql"
+          ],
+          "type": "option"
+        },
+        "namespace": {
+          "description": "Namespace for GraphQL types.",
+          "name": "namespace",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "ci": {
+          "description": "Disable prompts and require non-interactive behavior.",
+          "name": "ci",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "json": {
+          "description": "Emit machine-readable JSON output.",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": false,
+      "hiddenAliases": [],
+      "id": "stacksmith:typegen",
+      "pluginAlias": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginName": "@timbenniks/contentstack-stacksmith-cli",
+      "pluginType": "core",
+      "strict": true,
+      "isESM": false,
+      "relativePath": [
+        "lib",
+        "commands",
+        "stacksmith",
+        "typegen.js"
+      ]
+    }
+  },
+  "version": "0.1.0"
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@timbenniks/contentstack-stacksmith": ["../../packages/dsl/dist/index.d.ts"]
+    }
+  }
+}

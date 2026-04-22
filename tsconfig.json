@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/core" },
+    { "path": "./packages/dsl" },
+    { "path": "./packages/validators" },
+    { "path": "./packages/test-utils" },
+    { "path": "./packages/cli" },
+    { "path": "./apps/example-project" }
+  ]
+}

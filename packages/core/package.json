@@ -1,0 +1,28 @@
+{
+  "name": "@timbenniks/contentstack-stacksmith-core",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Shared internal schema, diff, graph, and planning primitives for Contentstack models as code.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --tsconfig tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "test": "vitest run",
+    "clean": "rimraf dist"
+  }
+}
