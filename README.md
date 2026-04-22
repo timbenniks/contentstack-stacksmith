@@ -2,6 +2,8 @@
 
 TypeScript-first Contentstack models as code, plus the tooling to import, compile, diff, document, type-generate, and safely promote them.
 
+**Documentation:** https://contentstack-stacksmith-docs-g1gh.vercel.app/
+
 This repository currently contains two public deliverables:
 
 - `@timbenniks/contentstack-stacksmith`

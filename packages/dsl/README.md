@@ -2,6 +2,8 @@
 
 TypeScript DSL for defining Contentstack content types and global fields as code.
 
+**Documentation:** https://contentstack-stacksmith-docs-g1gh.vercel.app/
+
 ## Main Exports
 
 - Entity helpers: `defineContentType`, `defineGlobalField`, `defineModels`, `defineModelsConfig`

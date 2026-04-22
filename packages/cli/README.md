@@ -2,6 +2,8 @@
 
 Contentstack CLI plugin for managing Contentstack models as code.
 
+**Documentation:** https://contentstack-stacksmith-docs-g1gh.vercel.app/
+
 Once linked into `csdx`, this package exposes:
 
 - `csdx stacksmith:init`
