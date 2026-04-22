@@ -1,19 +1,49 @@
 {
   "name": "@timbenniks/contentstack-stacksmith-cli",
-  "version": "0.1.0",
-  "description": "Contentstack CLI plugin for managing content models as code.",
+  "version": "1.0.0",
+  "description": "Contentstack CLI plugin for managing content models as code. Adds `csdx stacksmith:*` commands for init, build, plan, diff, apply, typegen, promote, docs, import, and audit-org.",
   "license": "MIT",
+  "author": "Tim Benniks <tbenniks@gmail.com>",
+  "homepage": "https://github.com/timbenniks/contentstack-stacksmith#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timbenniks/contentstack-stacksmith.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/timbenniks/contentstack-stacksmith/issues"
+  },
+  "keywords": [
+    "contentstack",
+    "contentstack-cli",
+    "csdx",
+    "csdx-plugin",
+    "oclif",
+    "oclif-plugin",
+    "cms",
+    "schema-as-code",
+    "content-models",
+    "stacksmith"
+  ],
   "type": "commonjs",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib",
-    "oclif.manifest.json"
+    "oclif.manifest.json",
+    "README.md",
+    "LICENSE"
   ],
   "oclif": {
     "commands": "./lib/commands",
     "bin": "csdx",
     "plugins": []
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json && pnpm exec oclif manifest",
@@ -39,8 +69,5 @@
     "mocha": "^11.1.0",
     "oclif": "^4.23.0",
     "ts-node": "^10.9.2"
-  },
-  "engines": {
-    "node": ">=20.0.0"
   }
 }

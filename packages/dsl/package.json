@@ -1,8 +1,30 @@
 {
   "name": "@timbenniks/contentstack-stacksmith",
-  "version": "0.1.0",
-  "description": "TypeScript DSL for defining Contentstack data models as code.",
+  "version": "1.0.0",
+  "description": "TypeScript DSL for defining Contentstack content types and global fields as code. Author schemas in TypeScript, diff against live stacks, and apply changes through a safe plan/apply workflow.",
   "license": "MIT",
+  "author": "Tim Benniks <tbenniks@gmail.com>",
+  "homepage": "https://github.com/timbenniks/contentstack-stacksmith#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timbenniks/contentstack-stacksmith.git",
+    "directory": "packages/dsl"
+  },
+  "bugs": {
+    "url": "https://github.com/timbenniks/contentstack-stacksmith/issues"
+  },
+  "keywords": [
+    "contentstack",
+    "cms",
+    "schema",
+    "schema-as-code",
+    "content-models",
+    "content-types",
+    "typescript",
+    "dsl",
+    "stacksmith",
+    "infrastructure-as-code"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -15,8 +37,16 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup --config tsup.config.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
