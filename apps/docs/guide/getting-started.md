@@ -30,7 +30,7 @@ csdx plugins:link @timbenniks/contentstack-stacksmith-cli
 After linking, the `stacksmith:*` commands become available:
 
 ```bash
-csdx models --help
+csdx stacksmith --help
 ```
 
 ## Scaffold a new project
@@ -97,7 +97,12 @@ export default defineContentType("author", {
 **src/models/content-types/blog-post.ts** — A content type with references and global fields:
 
 ```typescript
-import { defineContentType, globalField, reference, text } from "@timbenniks/contentstack-stacksmith";
+import {
+  defineContentType,
+  globalField,
+  reference,
+  text,
+} from "@timbenniks/contentstack-stacksmith";
 
 export default defineContentType("blog_post", {
   title: "Blog Post",
